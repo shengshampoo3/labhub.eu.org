@@ -54,7 +54,7 @@ module.exports = {
   links: [
     {
       name: 'GitHub',
-      link: 'https://github.com/pnetlabrepo/ishare2',
+      link: 'https://github.com/ishare2-org',
     },
     {
       name: 'Telegram',
