@@ -6,8 +6,15 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="description" content="OneDrive Vercel Index" />
-          <link rel="icon" href="/favicon.ico" />
+          <meta name="description" content={siteConfig.siteDescription}/>
+          <meta property="og:title" content={siteConfig.siteTitle}/>
+          <meta property="og:site_name" content={siteConfig.siteTitle}/>
+          <meta property="og:url" content={siteConfig.siteUrl}/>
+          <meta property="og:description" content={siteConfig.siteDescription}/>
+          <meta property="og:type" content={siteConfig.siteType}/>
+          <meta property="og:image" content={siteConfig.siteImage} />
+          <meta property="og:locale" content={siteConfig.siteLocale}/>
+          <link rel="icon" href="/favicon.ico"/>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           {siteConfig.googleFontLinks.map(link => (
