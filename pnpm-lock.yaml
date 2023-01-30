@@ -24,6 +24,7 @@ specifiers:
   csstype: ^3.1.1
   dayjs: ^1.11.7
   emoji-regex: ^10.2.1
+  envdot: ^0.0.3
   eslint: 8.32.0
   eslint-config-next: 13.1.6
   eslint-config-prettier: ^8.6.0
@@ -78,8 +79,7 @@ dependencies:
   csstype: 3.1.1
   dayjs: 1.11.7
   emoji-regex: 10.2.1
-  i18next: 22.4.9
-  ioredis: 5.3.0
+  ioredis: 5.2.3
   jszip: 3.10.1
   mpegts.js: 1.7.2
   next: 13.1.5_biqbaboplfbrettd7655fr4n2y
@@ -1551,6 +1551,11 @@ packages:
       domhandler: 5.0.3
     dev: true
 
+  /dotenv/7.0.0:
+    resolution: {integrity: sha512-M3NhsLbV1i6HuGzBUH8vXrtxOk+tWmzWKDMbAVSUp3Zsjm7ywFeuwrUXhmhQyRK1q5B5GGy7hcXPbj3bnfZg2g==}
+    engines: {node: '>=6'}
+    dev: false
+
   /duplexify/3.7.1:
     resolution: {integrity: sha512-07z8uv2wMyS51kKhD1KsdXJg5WQ6t93RneqRxUHnskXVtlYYkLqM0gqStQZ3pj073g687jPCHrqNfCzawLYh5g==}
     dependencies:
@@ -1594,6 +1599,14 @@ packages:
     resolution: {integrity: sha512-oYp7156SP8LkeGD0GF85ad1X9Ai79WtRsZ2gxJqtBuzH+98YUV6jkHEKlZkMbcrjJjIVJNIDP/3WL9wQkoPbWA==}
     engines: {node: '>=0.12'}
     dev: true
+
+  /envdot/0.0.3:
+    resolution: {integrity: sha512-vaJ+ac5s9X/cz1hPA7D/JLSbkloEZVozkzx2n83xcCUxuaQf/sHwjFIUiJfBwSoEU3crecRT7OftKCizhe9dwA==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    dependencies:
+      dotenv: 7.0.0
+    dev: false
 
   /eol/0.9.1:
     resolution: {integrity: sha512-Ds/TEoZjwggRoz/Q2O7SE3i4Jm66mqTDfmdHdq/7DKVk3bro9Q8h6WdXKdPqFLMoqxrDK5SVRzHVPOS6uuGtrg==}
