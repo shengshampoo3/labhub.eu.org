@@ -74,3 +74,4 @@ Temporary Items
 
 # Credentials
 .env
+.github-token
