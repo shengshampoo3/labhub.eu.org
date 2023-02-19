@@ -22,6 +22,17 @@ class MyDocument extends Document {
           ))}
         </Head>
         <body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2XJ1V5WZ5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2XJ1V5WZ5H');
+</script>
+
           <Main />
           <NextScript />
         </body>
