@@ -52,15 +52,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       let supportersJson = JSON.stringify(supportersJsonArray)
 
       res.send(JSON.parse(supportersJson) as any)
-      try {
-        // Write the supporters JSON string to a file if the response was successful
-        fs.writeFile('supporters.json', JSON.stringify(JSON.parse(supportersJson)), err => {
-          if (err) throw err
-          console.log('Supporters JSON data saved to file.')
-        })
-      } catch (error) {
-        console.error(error)
+      // Skip writing to file if the file system is read-only
+      if (fs.existsSync(cacheFilePath)) {
+        console.log('Skipping supporters JSON data saving due to read-only file system.')
+        return
       }
+      fs.writeFile('supporters.json', JSON.stringify(JSON.parse(supportersJson)), err => {
+        if (err) throw err
+        console.log('Supporters JSON data saved to file.')
+      })
     })
     .catch(error => {
       res.status(error?.response?.status ?? 500).json({ error: error?.response?.data ?? 'Internal server error.' })
