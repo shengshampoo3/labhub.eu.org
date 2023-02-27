@@ -75,3 +75,6 @@ Temporary Items
 # Credentials
 .env
 .github-token
+
+// Cache file
+supporters.json
