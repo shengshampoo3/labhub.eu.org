@@ -11,6 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     throw new Error('BMC_TOKEN or BMC_WEBHOOK_SECRET is not defined')
   }
   const cacheFilePath = 'supporters.json'
+  res.setHeader('Access-Control-Allow-Origin', '*')
 
   // Check if the response has been cached and is not older than 1 hour
   if (fs.existsSync(cacheFilePath) && cacheFilePath && Date.now() - fs.statSync(cacheFilePath).mtimeMs < 3600000) {
@@ -50,7 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Convert the array to a JSON string
       let supportersJson = JSON.stringify(supportersJsonArray)
-
+      // Send the JSON string as the response
       res.send(JSON.parse(supportersJson) as any)
       try {
         // Write the supporters JSON string to a file if the response was successful
