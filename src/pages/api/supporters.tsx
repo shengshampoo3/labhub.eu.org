@@ -52,11 +52,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       let supportersJson = JSON.stringify(supportersJsonArray)
 
       res.send(JSON.parse(supportersJson) as any)
-      // Write the supporters JSON string to a file if the response was successful
-      fs.writeFile('supporters.json', JSON.stringify(JSON.parse(supportersJson)), err => {
-        if (err) throw err
-        console.log('Supporters JSON data saved to file.')
-      })
+      try {
+        // Write the supporters JSON string to a file if the response was successful
+        fs.writeFile('supporters.json', JSON.stringify(JSON.parse(supportersJson)), err => {
+          if (err) throw err
+          console.log('Supporters JSON data saved to file.')
+        })
+      } catch (error) {
+        console.error(error)
+      }
     })
     .catch(error => {
       res.status(error?.response?.status ?? 500).json({ error: error?.response?.data ?? 'Internal server error.' })
