@@ -10,6 +10,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.error('BMC_TOKEN or BMC_WEBHOOK_SECRET is not defined')
     throw new Error('BMC_TOKEN or BMC_WEBHOOK_SECRET is not defined')
   }
+  const cacheFilePath = 'supporters.json'
+
+  // Check if the response has been cached and is not older than 1 hour
+  if (fs.existsSync(cacheFilePath) && cacheFilePath && Date.now() - fs.statSync(cacheFilePath).mtimeMs < 3600000) {
+    console.log('Returning cached supporters JSON data.')
+    const supportersJson = fs.readFileSync(cacheFilePath, 'utf8')
+    res.send(JSON.parse(supportersJson) as any)
+    return
+  }
   fetch(`https://developers.buymeacoffee.com/api/v1/supporters/?slug=sudoalex`, {
     headers: {
       Authorization: `Bearer ${TOKEN}`,
