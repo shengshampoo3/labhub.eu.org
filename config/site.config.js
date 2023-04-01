@@ -55,7 +55,7 @@ module.exports = {
   // [OPTIONAL] The footer component of your website. You can write HTML here, but you need to escape double
   // quotes - changing " to \". You can write anything here, and if you like badges, generate some with https://shields.io
   footer:
-    '<a href="https://t.me/unetlab_cloud" target="_blank" rel="noopener noreferrer">LabHub</a> - 2023',
+    '<a href="https://t.me/NetLabHub" target="_blank" rel="noopener noreferrer">LabHub</a> - 2023',
 
   // [OPTIONAL] This is where you specify the folders that are password protected. It is an array of paths pointing to all
   // the directories in which you have .password set. Check the documentation for details.
@@ -63,7 +63,7 @@ module.exports = {
   protectedRoutes: ['/🌞 Private folder/u-need-a-password', '/🥟 Some test files/Protected route'],
 
   // [OPTIONAL] Use "" here if you want to remove this email address from the nav bar.
-  email: 'mailto:contact@unetlab.cloud',
+  email: 'mailto:contact@labhub.eu.org',
 
   // [OPTIONAL] This is an array of names and links for setting your social information and links.
   // In the latest update, all brand icons inside font awesome is supported and the icon to render is based on the name
