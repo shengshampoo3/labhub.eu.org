@@ -17,22 +17,22 @@ module.exports = {
   kvPrefix: process.env.KV_PREFIX || '',
 
   // The name of your website. Present alongside your icon.
-  title: "UNETLAB CLOUD",
+  title: "LabHub",
 
   // Used for the title of the website, and the title of the page when you share the link.
-  siteTitle: "UNETLAB CLOUD",
+  siteTitle: "LabHub",
   // Used for the description of the website, and the description of the page when you share the link.
   siteDescription: "A repository of network emulator images for testing and simulation.",
   // Used for the image of the website, and the image of the page when you share the link.
   siteImage: "/icons/512.png",
   // Used for the URL of the website, and the URL of the page when you share the link.
-  siteUrl: "https://unetlab.cloud",
+  siteUrl: "https://labhub.eu.org",
   // Used for the language of the website, and the language of the page when you share the link.
   siteLocale: "en_US",
   // Used for the author of the website, and the author of the page when you share the link.
-  siteAuthor: "UNETLAB CLOUD",
+  siteAuthor: "LabHub",
   // Used for the keywords of the website, and the keywords of the page when you share the link.
-  keywords: "UNETLAB CLOUD",
+  keywords: "LabHub",
   // Used for the type of the website, and the site type of the page when you share the link.
   siteType: "website",
 
@@ -55,7 +55,7 @@ module.exports = {
   // [OPTIONAL] The footer component of your website. You can write HTML here, but you need to escape double
   // quotes - changing " to \". You can write anything here, and if you like badges, generate some with https://shields.io
   footer:
-    '<a href="https://t.me/unetlab_cloud" target="_blank" rel="noopener noreferrer">UNETLAB CLOUD</a> - 2023',
+    '<a href="https://t.me/unetlab_cloud" target="_blank" rel="noopener noreferrer">LabHub</a> - 2023',
 
   // [OPTIONAL] This is where you specify the folders that are password protected. It is an array of paths pointing to all
   // the directories in which you have .password set. Check the documentation for details.
@@ -75,7 +75,7 @@ module.exports = {
     },
     {
       name: 'Telegram',
-      link: 'https://t.me/unetlab_cloud',
+      link: 'https://t.me/NetLabHub',
     },
   ],
 
