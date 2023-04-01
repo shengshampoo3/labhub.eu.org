@@ -1,6 +1,6 @@
-# UNETLAB CLOUD INDEX
+# LabHub Index
 
-This is the source code used to generate the index of the UNETLAB CLOUD. It was forked from [spencerwooo/onedrive-vercel-index](https://github.com/spencerwooo/onedrive-vercel-index/) and adapted to our needs.  
+This is the source code used to generate the index of the LabHub. It was forked from [spencerwooo/onedrive-vercel-index](https://github.com/spencerwooo/onedrive-vercel-index/) and adapted to our needs.  
 
 # Credits
 
