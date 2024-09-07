@@ -103,6 +103,13 @@ module.exports = {
     ],
   },
 
+  // [OPTIONAL] Show a notification at the bottom right of the screen on the main page.
+  // This is useful for showing announcements or messages to users.
+  notification: {
+    show: true,
+    message: `Welcome to LabHub!<br>Join our <strong><a href='https://t.me/NetLabHub' target='_blank' rel='noopener noreferrer' style="text-decoration:underline;">Telegram Channel</a></strong> for updates and discussions.`
+  },
+
 
   // This is a day.js-style datetime format string to format datetimes in the app. Ref to
   // https://day.js.org/docs/en/display/format for detailed specification. The default value is ISO 8601 full datetime
