@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 import Breadcrumb from '../components/Breadcrumb'
 import SwitchLayout from '../components/SwitchLayout'
 import { TopBanner } from '../components/TopBanner'
+import { Notification } from '../components/Notification'
 
 export default function Folders() {
   const { query } = useRouter()
@@ -29,6 +30,7 @@ export default function Folders() {
           <TopBanner />
           <FileListing query={query} />
         </div>
+        <Notification />
       </main>
 
       <Footer />
