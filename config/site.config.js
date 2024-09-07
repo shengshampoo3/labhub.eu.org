@@ -82,6 +82,28 @@ module.exports = {
     },
   ],
 
+  // [OPTIONAL] This is an array of names and links for setting your donation information and links.
+  // Currently, we support PayPal, Buy Me A Coffee, and Ko-fi. You can add more by providing the icon name and link in TopBanner.tsx
+  donationSettings: {
+    show: true,
+    donationMessage: 'If you like this project, consider supporting it by buying me a coffee!',
+    donationLinks: [
+      {
+        name: 'PayPal',
+        link: 'https://paypal.me/sudoalex',
+      },
+      {
+        name: 'buymeacoffee',
+        link: 'https://www.buymeacoffee.com/sudoalex',
+      },
+      {
+        name: 'ko-fi',
+        link: 'https://ko-fi.com/sudoalex',
+      }
+    ],
+  },
+
+
   // This is a day.js-style datetime format string to format datetimes in the app. Ref to
   // https://day.js.org/docs/en/display/format for detailed specification. The default value is ISO 8601 full datetime
   // without timezone and replacing T with space.
