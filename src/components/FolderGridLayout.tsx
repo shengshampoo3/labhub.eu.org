@@ -10,6 +10,7 @@ import { getBaseUrl } from '../utils/getBaseUrl'
 import { formatModifiedDateTime } from '../utils/fileDetails'
 import { Checkbox, ChildIcon, ChildName, Downloading } from './FileListing'
 import { getStoredToken } from '../utils/protectedRouteHandler'
+import { allowFolderDownload } from '../../config/site.config'
 
 const GridItem = ({ c, path }: { c: OdFolderChildren; path: string }) => {
   // We use the generated medium thumbnail for rendering preview images (excluding folders)
@@ -119,7 +120,7 @@ const FolderGridLayout = ({
             key={c.id}
             className="group relative overflow-hidden rounded transition-all duration-100 hover:bg-gray-100 dark:hover:bg-gray-850"
           >
-            <div className="absolute top-0 right-0 z-10 m-1 rounded bg-white/50 py-0.5 opacity-0 transition-all duration-100 group-hover:opacity-100 dark:bg-gray-900/50">
+            <div className="absolute right-0 top-0 z-10 m-1 rounded bg-white/50 py-0.5 opacity-0 transition-all duration-100 group-hover:opacity-100 dark:bg-gray-900/50">
               {c.folder ? (
                 <div>
                   <span
@@ -132,17 +133,18 @@ const FolderGridLayout = ({
                   >
                     <FontAwesomeIcon icon={['far', 'copy']} />
                   </span>
-                  {folderGenerating[c.id] ? (
-                    <Downloading title={t('Downloading folder, refresh page to cancel')} style="px-1.5 py-1" />
-                  ) : (
-                    <span
-                      title={t('Download folder')}
-                      className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
-                      onClick={handleFolderDownload(getItemPath(c.name), c.id, c.name)}
-                    >
-                      <FontAwesomeIcon icon={['far', 'arrow-alt-circle-down']} />
-                    </span>
-                  )}
+                  {allowFolderDownload &&
+                    (folderGenerating[c.id] ? (
+                      <Downloading title={t('Downloading folder, refresh page to cancel')} style="px-1.5 py-1" />
+                    ) : (
+                      <span
+                        title={t('Download folder')}
+                        className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
+                        onClick={handleFolderDownload(getItemPath(c.name), c.id, c.name)}
+                      >
+                        <FontAwesomeIcon icon={['far', 'arrow-alt-circle-down']} />
+                      </span>
+                    ))}
                 </div>
               ) : (
                 <div>
@@ -176,7 +178,7 @@ const FolderGridLayout = ({
             <div
               className={`${
                 selected[c.id] ? 'opacity-100' : 'opacity-0'
-              } absolute top-0 left-0 z-10 m-1 rounded bg-white/50 py-0.5 group-hover:opacity-100 dark:bg-gray-900/50`}
+              } absolute left-0 top-0 z-10 m-1 rounded bg-white/50 py-0.5 group-hover:opacity-100 dark:bg-gray-900/50`}
             >
               {!c.folder && !(c.name === '.password') && (
                 <Checkbox
