@@ -7,9 +7,9 @@ import FileListing from '../components/FileListing'
 import Footer from '../components/Footer'
 import Breadcrumb from '../components/Breadcrumb'
 import SwitchLayout from '../components/SwitchLayout'
+import { TopBanner } from '../components/TopBanner'
 
 export default function Home() {
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-white dark:bg-gray-900">
       <Head>
@@ -23,12 +23,12 @@ export default function Home() {
             <Breadcrumb />
             <SwitchLayout />
           </nav>
+          <TopBanner />
           <FileListing />
         </div>
       </main>
 
       <Footer />
-      
     </div>
   )
 }

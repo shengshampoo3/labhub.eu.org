@@ -8,6 +8,7 @@ import FileListing from '../components/FileListing'
 import Footer from '../components/Footer'
 import Breadcrumb from '../components/Breadcrumb'
 import SwitchLayout from '../components/SwitchLayout'
+import { TopBanner } from '../components/TopBanner'
 
 export default function Folders() {
   const { query } = useRouter()
@@ -25,6 +26,7 @@ export default function Folders() {
             <Breadcrumb query={query} />
             <SwitchLayout />
           </nav>
+          <TopBanner />
           <FileListing query={query} />
         </div>
       </main>
