@@ -107,7 +107,7 @@ module.exports = {
   // This is useful for showing announcements or messages to users.
   notification: {
     show: true,
-    message: `Welcome to LabHub!<br>Join our <strong><a href='https://t.me/NetLabHub' target='_blank' rel='noopener noreferrer' style="text-decoration:underline;">Telegram Channel</a></strong> for updates and discussions.`
+    // Set the message to show in the notification in the file components/Notification.tsx, add translations if needed in the locale files /public/locales
   },
 
 

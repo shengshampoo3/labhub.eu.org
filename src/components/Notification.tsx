@@ -4,6 +4,8 @@ import { faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import useLocalStorage from '../utils/useLocalStorage'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import Image from 'next/image'
 
 export const Notification = () => {
   const initialShow = {
@@ -35,6 +37,8 @@ export const Notification = () => {
     setShowInfo({ show: false, expires: Date.now() + hideFor })
   }
 
+  const { t } = useTranslation()
+
   // Render notification only on the client and if it should be visible
   if (!isClient || !siteConfig.notification.show || !showInfo.show) {
     return null // Render nothing during SSR or when notification is hidden
@@ -54,7 +58,25 @@ export const Notification = () => {
         >
           <FontAwesomeIcon icon={faClose} className="aspect-square text-lg text-black dark:text-white" />
         </button>
-        <div className="flex-1" dangerouslySetInnerHTML={{ __html: siteConfig.notification.message }} />
+        <div className="flex-1">
+          <strong>{t('Welcome to LabHub!')}</strong>
+          <br />
+          {t('Join our Telegram Channel for updates and discussions.')}
+          <br />
+          <a
+            href="https://t.me/labhub"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex items-center space-x-2 hover:opacity-80"
+          >
+            <Image
+              width={150}
+              height={150}
+              src="https://img.shields.io/badge/Join-Channel-blue?style=for-the-badge&logo=telegram"
+              alt="Join Telegram"
+            />
+          </a>
+        </div>
       </div>
     </div>
   ) : (
