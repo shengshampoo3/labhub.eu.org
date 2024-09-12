@@ -64,7 +64,7 @@ export const Notification = () => {
           {t('Join our Telegram Channel for updates and discussions.')}
           <br />
           <a
-            href="https://t.me/labhub"
+            href="https://t.me/NetLabHub"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 flex items-center space-x-2 hover:opacity-80"
