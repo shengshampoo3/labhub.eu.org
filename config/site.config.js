@@ -86,7 +86,7 @@ module.exports = {
   // Currently, we support PayPal, Buy Me A Coffee, and Ko-fi. You can add more by providing the icon name and link in TopBanner.tsx
   donationSettings: {
     show: true,
-    donationMessage: 'If you like this project, consider supporting it by buying me a coffee!',
+    // Set the message to show in the donation banner in the file components/TopBanner.tsx, add translations if needed in the locale files /public/locales
     donationLinks: [
       {
         name: 'PayPal',
