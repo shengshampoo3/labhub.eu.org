@@ -26,7 +26,7 @@ export const Notification = () => {
     }
   }, [showInfo, setShowInfo])
 
-  const hideFor = 1000 * 60 * 60 * 24 // 24 hours
+  const hideFor = 1000 * 60 * 60 * 24 * 3 // 3 days in milliseconds
 
   // Check if the notification should be reset
   if (Date.now() > showInfo.expires && !showInfo.show) {
@@ -61,10 +61,10 @@ export const Notification = () => {
         <div className="flex-1">
           <strong>{t('Welcome to LabHub!')}</strong>
           <br />
-          {t('Join our Telegram Channel for updates and discussions.')}
+          {t('Read our latest announcement on Reddit regarding the official group chat and channel.')}
           <br />
           <a
-            href="https://t.me/NetLabHub"
+            href="https://www.reddit.com/r/labhub/comments/1gat7hk/official_group_chat_taken_down_by_telegram/"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 flex items-center space-x-2 hover:opacity-80"
@@ -72,8 +72,8 @@ export const Notification = () => {
             <Image
               width={150}
               height={150}
-              src="https://img.shields.io/badge/Join-Channel-blue?style=for-the-badge&logo=telegram"
-              alt="Join Telegram"
+              src="https://img.shields.io/badge/Read%20Reddit%20Post-FF4500?style=for-the-badge&logo=reddit&logoColor=white"
+              alt="Read reddit post"
             />
           </a>
         </div>
