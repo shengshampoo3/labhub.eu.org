@@ -13,17 +13,17 @@ const FourOhFour: React.FC<{ errorMsg: string }> = ({ errorMsg }) => {
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             Oops, that's a <span className="underline decoration-red-500 decoration-wavy">four-oh-four</span>.
           </Trans>
+          <div className="mt-2 text-sm font-normal">
+            <Trans>
+              Check out our{' '}
+              <a href="https://t.me/NetLabHub" className="text-blue-600 hover:text-blue-700 hover:underline">
+                Telegram Channel
+              </a>{' '}
+              for status announcements.
+            </Trans>
+          </div>
         </div>
-        <div>
-          <p>
-            Check out out{' '}
-            <a href="https://t.me/NetLabHub" className="text-blue-600 hover:text-blue-700 hover:underline">
-              Telegram Channel
-            </a>{' '}
-            for status announcements.
-          </p>
-        </div>
-        <div>
+        <div className="mb-2 text-sm">
           <Trans>The following message is provided for developers to debug the issue:</Trans>
         </div>
         <div className="mb-4 overflow-hidden break-all rounded border border-gray-400/20 bg-gray-50 p-2 font-mono text-xs dark:bg-gray-800">
