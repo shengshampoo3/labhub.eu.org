@@ -37,7 +37,7 @@ module.exports = {
   siteType: "website",
 
   // The folder that you are to share publicly with onedrive-vercel-index. Use '/' if you want to share your root folder.
-  baseDirectory: '/public/',
+  baseDirectory: '/Pkg_sexn/',
 
   // Allow downloading folders
   allowFolderDownload: false,
